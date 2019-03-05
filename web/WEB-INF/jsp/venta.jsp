@@ -10,24 +10,38 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Consulta Ventas</title>
     </head>
     <body>
-        <h1>Id Factura</h1>
-        ${mensaje}<br/>
-        <table>
-            <tr>
-                <th>Id Factura</th>
-                <th>Fecha Factura</th>
-                <th>Valor Factura</th>
-            </tr>
-            <c:forEach items="${factura}" var="fac">
-                <tr>
-                    <td><c:out value="${fac.idFactura}"></c:out>
-                    <td><c:out value="${fac.fechaFactura}"></c:out>
-                    <td><c:out value="${fac.valorFactura}"></c:out>
-                </tr>
-            </c:forEach>
-        </table>
+        <div class="about-heading">
+            <h1>Consultar <span>Ventas</span></h1>
+        </div>
+        <br/>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="table-responsive">
+                    <center><h2>Datos Factura</h2></center>
+                    <table id="tablaResultado" class="table table-bordered table-striped table-hover">
+                        <tr>
+                            <th>Id Factura</th>
+                            <th>Fecha Factura</th>
+                            <th>Valor Factura</th>
+                            <th>Accion</th>
+                        </tr>
+                        <c:forEach items="${factura}" var="fac">
+                            <tr>
+                                <td><c:out value="${fac.idFactura}"></c:out>
+                                <td><c:out value="${fac.fechaFactura}"></c:out>
+                                <td><c:out value="${fac.valorFactura}"></c:out>
+                                    <td>
+                                        <a href="<c:url value="detalleVenta.htm?id=${fac.idFactura}" />" class="btn btn-default">Detalle venta</a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

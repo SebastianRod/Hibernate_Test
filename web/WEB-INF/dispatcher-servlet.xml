@@ -21,6 +21,7 @@
             <props>
                 <prop key="index.htm">indexController</prop>
                 <prop key="venta.htm">facturaController</prop>
+                <prop key="detalleVenta.htm">detalleVentaController</prop>
             </props>
         </property>
     </bean>
@@ -38,5 +39,6 @@
           p:viewName="index" />
     
     <bean name = "facturaController" class = "controller.FacturaController" />
+    <bean name = "detalleVentaController" class = "controller.detalleVentaController" />
 
 </beans>

@@ -26,7 +26,6 @@ public class FacturaController {
     @RequestMapping( method = RequestMethod.GET)
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1){
         ModelAndView mav = new ModelAndView("venta");
-        String out = "Spring + hibernate";
         try{
             Session sesion = HibernateUtil.getSessionFactory().getCurrentSession();
             sesion.beginTransaction();
@@ -36,7 +35,6 @@ public class FacturaController {
         }catch(Exception e){
             e.printStackTrace();
         }
-        mav.addObject("mensaje", out);
         return mav;
     }
     /*
