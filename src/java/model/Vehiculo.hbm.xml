@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 5, 2019 12:39:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Vehiculo" table="vehiculo" catalog="tas" optimistic-lock="version">
+        <id name="idVehiculo" type="java.lang.Integer">
+            <column name="ID_VEHICULO" />
+            <generator class="identity" />
+        </id>
+        <property name="placaVehiculo" type="string">
+            <column name="PLACA_VEHICULO" length="6" not-null="true" />
+        </property>
+        <property name="modeloVehiculo" type="int">
+            <column name="MODELO_VEHICULO" not-null="true" />
+        </property>
+        <property name="precioVehiculo" type="int">
+            <column name="PRECIO_VEHICULO" not-null="true" />
+        </property>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="VEHICULO_ID_VEHICULO" not-null="true" />
+            </key>
+            <one-to-many class="model.Factura" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 5, 2019 12:39:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Usuario" table="usuario" catalog="tas" optimistic-lock="version">
+        <id name="idUsuario" type="int">
+            <column name="ID_USUARIO" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tipoUsuario" class="model.TipoUsuario" fetch="select">
+            <column name="TIPO_USUARIO_ID_TIPO_USUARIO" not-null="true" />
+        </many-to-one>
+        <property name="passwordUsuario" type="string">
+            <column name="password_usuario" length="45" />
+        </property>
+        <property name="nombreUsuario" type="string">
+            <column name="NOMBRE_USUARIO" length="45" not-null="true" />
+        </property>
+        <property name="apellidoUsuario" type="string">
+            <column name="APELLIDO_USUARIO" length="45" not-null="true" />
+        </property>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USUARIO_ID_USUARIO" not-null="true" />
+            </key>
+            <one-to-many class="model.Factura" />
+        </set>
+    </class>
+</hibernate-mapping>

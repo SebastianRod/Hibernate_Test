@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 5, 2019 12:39:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Factura" table="factura" catalog="tas" optimistic-lock="version">
+        <id name="idFactura" type="java.lang.Integer">
+            <column name="ID_FACTURA" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="model.Cliente" fetch="select">
+            <column name="CLIENTE_ID_CLIENTE" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="model.Usuario" fetch="select">
+            <column name="USUARIO_ID_USUARIO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vehiculo" class="model.Vehiculo" fetch="select">
+            <column name="VEHICULO_ID_VEHICULO" not-null="true" />
+        </many-to-one>
+        <property name="fechaFactura" type="timestamp">
+            <column name="FECHA_FACTURA" length="19" not-null="true" />
+        </property>
+        <property name="valorFactura" type="int">
+            <column name="VALOR_FACTURA" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

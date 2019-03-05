@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 5, 2019 12:39:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Cliente" table="cliente" catalog="tas" optimistic-lock="version">
+        <id name="idCliente" type="int">
+            <column name="ID_CLIENTE" />
+            <generator class="assigned" />
+        </id>
+        <property name="tipoDocumentoCliente" type="string">
+            <column name="TIPO_DOCUMENTO_CLIENTE" length="3" not-null="true" />
+        </property>
+        <property name="nombresCliente" type="string">
+            <column name="NOMBRES_CLIENTE" length="45" not-null="true" />
+        </property>
+        <property name="apellidosCliente" type="string">
+            <column name="APELLIDOS_CLIENTE" length="45" not-null="true" />
+        </property>
+        <property name="telefonoCliente" type="int">
+            <column name="TELEFONO_CLIENTE" not-null="true" />
+        </property>
+        <property name="correoCliente" type="string">
+            <column name="CORREO_CLIENTE" length="45" not-null="true" />
+        </property>
+        <property name="direccionCliente" type="string">
+            <column name="DIRECCION_CLIENTE" length="45" not-null="true" />
+        </property>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CLIENTE_ID_CLIENTE" not-null="true" />
+            </key>
+            <one-to-many class="model.Factura" />
+        </set>
+    </class>
+</hibernate-mapping>
