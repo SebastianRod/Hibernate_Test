@@ -39,6 +39,6 @@
           p:viewName="index" />
     
     <bean name = "facturaController" class = "controller.FacturaController" />
-    <bean name = "detalleVentaController" class = "controller.detalleVentaController" />
+    <bean name = "detalleVentaController" class = "controller.DetalleVentaController" />
 
 </beans>
