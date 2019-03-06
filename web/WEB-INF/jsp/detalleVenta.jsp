@@ -27,13 +27,12 @@
                             <th>Id Factura</th>
                             <th>Fecha Factura</th>
                             <th>Valor Factura</th>
-                            <th>Accion</th>
                         </tr>
                         <c:forEach items="${factura}" var="fac">
                             <tr>
-                                <td><c:out value="${fac.idFactura}"></c:out>
-                                <td><c:out value="${fac.fechaFactura}"></c:out>
-                                <td><c:out value="${fac.valorFactura}"></c:out>
+                                <td><c:out value="${fac[0]}"></c:out>
+                                <td><c:out value="${fac[1]}"></c:out>
+                                <td><c:out value="${fac[2]}"></c:out>
                             </tr>
                         </c:forEach>
                     </table>
