@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <title>JSP Page</title>
+        <title>Detalle Venta</title>
     </head>
     <body>
         <div class="about-heading">
@@ -53,15 +53,15 @@
                             <th>Correo Cliente</th>
                             <th>Direccion Cliente</th>
                         </tr>
-                        <c:forEach items="${cliente}" var="cli">
+                        <c:forEach items="${factura}" var="cli">
                             <tr>
-                                <td><c:out value="${cli.idCliente}"></c:out>
-                                <td><c:out value="${cli.tipoDocumentoCliente}"></c:out>
-                                <td><c:out value="${cli.nombresCliente}"></c:out>
-                                <td><c:out value="${cli.apellidosCliente}"></c:out>
-                                <td><c:out value="${cli.telefonoCliente}"></c:out>
-                                <td><c:out value="${cli.correoCliente}"></c:out>
-                                <td><c:out value="${cli.direccionCliente}"></c:out>
+                                <td><c:out value="${cli[3]}"></c:out>
+                                <td><c:out value="${cli[4]}"></c:out>
+                                <td><c:out value="${cli[5]}"></c:out>
+                                <td><c:out value="${cli[6]}"></c:out>
+                                <td><c:out value="${cli[7]}"></c:out>
+                                <td><c:out value="${cli[8]}"></c:out>
+                                <td><c:out value="${cli[9]}"></c:out>
                             </tr>
                         </c:forEach>
                     </table>
@@ -79,17 +79,18 @@
                             <th>Modelo Vehiculo</th>
                             <th>Precio Vehiculo</th>
                         </tr>
-                        <c:forEach items="${vehiculo}" var="veh">
+                        <c:forEach items="${factura}" var="veh">
                             <tr>
-                                <td><c:out value="${veh.idVehiculo}"></c:out>
-                                <td><c:out value="${veh.placaVehiculo}"></c:out>
-                                <td><c:out value="${veh.modeloVehiculo}"></c:out>
-                                <td><c:out value="${veh.precioVehiculo}"></c:out>
+                                <td><c:out value="${veh[10]}"></c:out>
+                                <td><c:out value="${veh[11]}"></c:out>
+                                <td><c:out value="${veh[12]}"></c:out>
+                                <td><c:out value="${veh[13]}"></c:out>
                             </tr>
                         </c:forEach>
                     </table>
                 </div>
             </div>
+            <center><a href="venta.htm">Volver</a></center>
         </div>
     </body>
 </html>

@@ -36,7 +36,10 @@ public class DetalleVentaController {
         try {
             Session sesion = HibernateUtil.getSessionFactory().getCurrentSession();
             sesion.beginTransaction();
-            String query = "select f.idFactura, f.fechaFactura, f.valorFactura from Factura f, Cliente c where f.cliente = c.idCliente and f.idFactura="+idFactura;
+            String query = "select f.idFactura, f.fechaFactura, f.valorFactura, "
+                    + "c.idCliente, c.tipoDocumentoCliente, c.nombresCliente, c.apellidosCliente, c.telefonoCliente, c.correoCliente, c.direccionCliente, "
+                    + "v.idVehiculo, v.placaVehiculo, v.modeloVehiculo, v.precioVehiculo"
+                    + " from Factura f, Cliente c, Vehiculo v where f.cliente = c.idCliente and f.vehiculo = v.idVehiculo and f.idFactura="+idFactura;
             List factura = sesion.createQuery(query).list();
             System.out.println("tamaño lista: " +factura.size());
             System.out.println("valor: "+factura.toString());
