@@ -9,6 +9,6 @@
     </head>
 
     <body>
-        <center><a href="venta.htm">Consulta venta</a></center>
+        <center><a href="inicio.htm">Consulta venta</a></center>
     </body>
 </html>

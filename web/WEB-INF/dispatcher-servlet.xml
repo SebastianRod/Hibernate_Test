@@ -22,6 +22,10 @@
                 <prop key="index.htm">indexController</prop>
                 <prop key="venta.htm">facturaController</prop>
                 <prop key="detalleVenta.htm">detalleVentaController</prop>
+                <prop key="login.htm">loginController</prop>
+                <prop key="inicio.htm">inicioController</prop>
+                <prop key="vehiculo.htm">vehiculoController</prop>
+                <prop key="cliente.htm">clienteController</prop>
             </props>
         </property>
     </bean>
@@ -40,5 +44,9 @@
     
     <bean name = "facturaController" class = "controller.FacturaController" />
     <bean name = "detalleVentaController" class = "controller.DetalleVentaController" />
+    <bean name = "loginController" class = "controller.LoginController" />
+    <bean name = "inicioController" class = "controller.InicioController" />
+    <bean name = "vehiculoController" class = "controller.VehiculoController" />
+    <bean name = "clienteController" class = "controller.ClienteController" />
 
 </beans>
